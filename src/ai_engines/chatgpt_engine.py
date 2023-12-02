@@ -66,4 +66,4 @@ def llm_filter(transcript: pd.DataFrame):
 if __name__ == "__main__":
     transcript = pd.read_csv("output_chunks/transcript.csv")
     approved_script = llm_filter(transcript.head(5))
-    approved_script.to_csv("output_chunks/approved_script.csv")
+    approved_script.to_csv("output_chunks/approved_script.csv", index=False)

@@ -34,7 +34,7 @@ def extract_audio(video_clip: VideoFileClip,
         result = model.transcribe(audio_path, word_timestamps=True, fp16=False)
         logging.debug("File transcription complete, %s", audio_path)
         df = pd.DataFrame(result['segments'])
-    df.to_csv(os.path.join(CACHE_DIRECTORY, "transcript.csv"))
+    df.to_csv(os.path.join(CACHE_DIRECTORY, "transcript.csv"), index=False)
     return df
 
 
